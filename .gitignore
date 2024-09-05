@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# TypeScript build output
+dist/
+build/
+
+# TypeScript declaration files
+*.d.ts
+
+# Compiled JavaScript files
+*.js
+*.js.map
+
+# AWS CDK cache and logs
+cdk.out/
+*.log
+
+# Environment files
+.env
+
+# Operating System files
+.DS_Store
