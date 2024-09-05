@@ -7,13 +7,18 @@ interface ApiGatewayStackProps extends cdk.StackProps {
 }
 
 export class ApiGatewayStack extends cdk.Stack {
+  public readonly apiUrl: string;
+
   constructor(scope: cdk.Construct, id: string, props: ApiGatewayStackProps) {
     super(scope, id, props);
 
-    // Define your API Gateway
-    new apigateway.LambdaRestApi(this, 'ItemsApi', {
-      handler: props.lambdaFunction, // Use the Lambda function passed in props
+    const api = new apigateway.LambdaRestApi(this, 'ItemsApi', {
+      handler: props.lambdaFunction,
       proxy: false, // Disable proxy integration for custom routing
     });
+
+    // Expose the API URL
+    this.apiUrl = api.url;
   }
 }
+

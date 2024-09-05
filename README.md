@@ -24,6 +24,8 @@ This project demonstrates a serverless application using AWS services:
    ```bash
    npm install -g aws-cdk
 
+   ## Setup Instructions
+
 ## Useful commands
 
 * `npm run build`   compile typescript to js
